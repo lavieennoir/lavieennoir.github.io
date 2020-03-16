@@ -1,0 +1,54 @@
+// Variables
+
+$wave-width: 1600px;
+$wave-height: 198px;
+$inner-size: $wave-height;
+$logo-padding: 16px;
+$logo-size: $inner-size + 2 * $logo-padding;
+
+// Animation
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -$wave-width;
+  }
+}
+
+// Styles
+
+.container {
+  height: $logo-size;
+  width: $logo-size;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #03a9f4;
+  background-color: #e1f5fe;
+  box-shadow: 0px 0px 8px 0px #ccc;
+}
+.wave {
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: $inner-size;
+  width: 2 * $wave-width;
+
+  transform: translate3d(0, 0, 0);
+
+  &.top {
+    background-image: url("../../assets/waves/logo-wave-01.svg");
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    margin-top: 8px;
+  }
+  &.middle {
+    background-image: url("../../assets/waves/logo-wave-02.svg");
+    animation: wave 6s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    margin-top: 16px - $inner-size;
+  }
+  &.bottom {
+    background-image: url("../../assets/waves/logo-wave-03.svg");
+    animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    margin-top: 24px - $inner-size;
+  }
+}
