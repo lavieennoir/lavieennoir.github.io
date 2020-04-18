@@ -1,0 +1,8 @@
+$message-size: 1.5rem;
+
+.loader__message {
+  text-align: center;
+  font-size: $message-size;
+  line-height: $message-size;
+  margin-top: -$message-size * 5;
+}

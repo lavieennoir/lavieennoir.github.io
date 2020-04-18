@@ -1,0 +1,48 @@
+$cubic-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$svg-scale: 0.5;
+$transition-duration: 300ms;
+$transition-delay: 100ms;
+$svg-rotation: -90deg;
+
+$message-transition-duration: 1s;
+
+.loader-enter {
+  opacity: 0;
+  svg {
+    transform: scale(#{$svg-scale}) rotate(#{$svg-rotation});
+  }
+}
+.loader-enter-active {
+  opacity: 1;
+  transition: opacity #{$transition-duration} #{$cubic-ease-in-out};
+  svg {
+    transform: translateX(0);
+    transition: transform #{$transition-duration} #{$cubic-ease-in-out};
+  }
+}
+.loader-exit {
+  opacity: 1;
+}
+.loader-exit-active {
+  opacity: 0;
+  transition: opacity #{$transition-duration} #{$cubic-ease-in-out} #{$transition-delay};
+  svg {
+    transform: scale(#{$svg-scale}) rotate(#{-$svg-rotation});
+    transition: transform #{$transition-duration} #{$cubic-ease-in-out};
+  }
+}
+
+.loader__message-enter {
+  opacity: 0;
+}
+.loader__message-enter-active {
+  opacity: 1;
+  transition: opacity #{$message-transition-duration} ease-in;
+}
+.loader__message-exit {
+  opacity: 1;
+}
+.loader__message-exit-active {
+  opacity: 0;
+  transition: opacity #{$message-transition-duration} ease-in;
+}

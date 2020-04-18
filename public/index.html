@@ -12,8 +12,135 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Dmytro Khyzhniak - Software engineer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+      html {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body *,
+      body ::after,
+      body ::before {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-family: "Poiret One", cursive;
+        font-size: 4rem;
+        text-align: center;
+      }
+
+      .loader--fullpage {
+        height: 100vh;
+        position: fixed;
+        padding: 1rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #1e1e1e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fefefe;
+      }
+      .loader--fullpage > svg {
+        width: 25%;
+        max-width: 10rem;
+      }
+      noscript {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        display: flex;
+        flex-grow: 1;
+        padding: 3rem 0;
+      }
+      noscript p {
+        margin: auto 0 0 0;
+      }
+      noscript a {
+        text-decoration: none;
+        border: 1px solid #dadce0;
+        border-radius: 0.5rem;
+        color: inherit;
+        padding: 0.5rem;
+        transition: background-color 300ms;
+        display: inline-block;
+        margin-bottom: auto;
+      }
+      noscript a:hover,
+      noscript a:focus {
+        background-color: #76787c;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="loader--fullpage">
+        <noscript>
+          <p>
+            Please enable javascript to see this website. Or download the resume
+            in PDF.
+          </p>
+        </noscript>
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 52 12"
+          enable-background="new 0 0 0 0"
+          xml:space="preserve"
+        >
+          <circle fill="#fff" stroke="none" cx="6" cy="6" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.1"
+            />
+          </circle>
+          <circle fill="#fff" stroke="none" cx="26" cy="6" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.2"
+            />
+          </circle>
+          <circle fill="#fff" stroke="none" cx="46" cy="6" r="6">
+            <animate
+              attributeName="opacity"
+              dur="1s"
+              values="0;1;0"
+              repeatCount="indefinite"
+              begin="0.3"
+            />
+          </circle>
+        </svg>
+        <noscript>
+          <a href="%PUBLIC_URL%/resume/Dmytro-Khyzhniak.pdf">Download</a>
+        </noscript>
+      </div>
+    </div>
   </body>
 </html>
