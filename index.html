@@ -4,16 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"
-    />
     <title>@lavieennoir</title>
     <meta name="description" content="Passionate and experienced Web Developer">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" />
     <style>
       :root {
-        --theme-color: #c090ff;
+        --theme-color: #537FE7;
+        --background-color: #181823;
+        --text-color:  #E9F8F9;
+      }
+      .sidebar, body {
+        background-color: var(--background-color, #3f3f3f);
+        color: var(--text-color, #c8c8c8);
       }
     </style>
   </head>
@@ -22,12 +24,10 @@
     <script>
       window.$docsify = {
         name: '@lavieennoir',
-        repo: 'lavieennoir',
         coverpage: true,
         basePath: 'https://raw.githubusercontent.com/lavieennoir/lavieennoir.github.io/main/',
       };
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
   </body>
 </html>

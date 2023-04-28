@@ -4,4 +4,4 @@
 [Get Started](#💫-about-me)
 
 <!-- background color -->
-![color](#3f3f3f)
+![color](#181823)
