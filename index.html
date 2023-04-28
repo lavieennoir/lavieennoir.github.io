@@ -13,19 +13,49 @@
         --background-color: #181823;
         --text-color:  #E9F8F9;
       }
-      .sidebar, body {
-        background-color: var(--background-color, #3f3f3f);
-        color: var(--text-color, #c8c8c8);
+      .sidebar, .sidebar-toggle, body {
+        background-color: var(--background-color, #181823);
+        color: var(--text-color, #E9F8F9);
+      }
+      #loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--background-color, #181823);
+        z-index: 999;
+        transition: opacity ease 0.3s;
+      }
+      .hiding {
+        opacity: 0;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">Please wait</div>
+    <div id="loader"></div>
     <script>
+      // Restrict page scrolling until loader is visible
+      document.body.style.overflow = 'hidden';
       window.$docsify = {
         name: '@lavieennoir',
         coverpage: true,
+        routerMode: 'history',
         basePath: 'https://raw.githubusercontent.com/lavieennoir/lavieennoir.github.io/main/',
+        plugins: [
+          function loaderPlugin(hook) {
+            hook.ready(function () {
+              const loaderElement = document.querySelector('#loader');
+              if (loaderElement) {
+                document.body.style.overflow = 'initial';
+                loaderElement.classList.add('hiding')
+                setTimeout(function() { loaderElement.remove(); }, 300);
+              }
+            });
+          },
+        ]
       };
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
